@@ -89,7 +89,7 @@ nav {
   padding: 0.5em 1em;
 }
 
-nav a {
+nav a, footer a {
   color: var(--color-text-strong);
   text-decoration: none;
   transition-property: color;
@@ -102,7 +102,8 @@ path {
 
 h1,
 h2,
-nav a {
+nav a,
+footer a {
   color: var(--color-text-strong);
 }
 

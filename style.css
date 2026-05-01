@@ -89,7 +89,8 @@ nav {
   padding: 0.5em 1em;
 }
 
-nav a, footer a {
+nav a,
+footer a {
   color: var(--color-text-strong);
   text-decoration: none;
   transition-property: color;
@@ -105,6 +106,11 @@ h2,
 nav a,
 footer a {
   color: var(--color-text-strong);
+}
+
+nav h1,
+nav h2 {
+  margin-block: auto;
 }
 
 nav a:has(.icon-link),
@@ -170,7 +176,7 @@ footer a:active {
   flex-direction: column;
 }
 
-#theme-choices>button {
+#theme-choices > button {
   background: none;
   outline: none;
   border: none;
@@ -185,37 +191,37 @@ footer a:active {
   gap: 1em;
 }
 
-#theme-choices>button svg {
+#theme-choices > button svg {
   height: 2em;
 }
 
-#theme-choices>button:disabled {
+#theme-choices > button:disabled {
   cursor: not-allowed;
 }
 
-#theme-choices>button:first-child {
+#theme-choices > button:first-child {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
-#theme-choices>button:last-child {
+#theme-choices > button:last-child {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
-#theme-choices>button:not(:last-child) {
+#theme-choices > button:not(:last-child) {
   border-bottom: 1px solid var(--color-border);
 }
 
-#theme-choices>button:not(:disabled):hover {
+#theme-choices > button:not(:disabled):hover {
   background-color: hsla(0, 0%, 50%, 10%);
 }
 
-#theme-choices>button:not(:disabled):focus {
+#theme-choices > button:not(:disabled):focus {
   box-shadow: 0 0 0 0.125rem var(--color-primary-active) inset;
 }
 
-#theme-choices>button:not(:disabled):active {
+#theme-choices > button:not(:disabled):active {
   background-color: hsla(0, 0%, 50%, 25%);
 }
 

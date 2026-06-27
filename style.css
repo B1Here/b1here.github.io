@@ -20,7 +20,7 @@ html {
   :root {
     color-scheme: dark;
     --color-bg-dark: hsl(210, 10%, 5%);
-    --color-bg-medium: hsl(0, 0%, 5%);
+    --color-bg-medium: hsl(210, 5%, 7%);
     --color-bg-light: hsl(0, 0%, 10%);
     --color-border: hsl(0, 0%, 15%);
     --color-text-medium: hsl(0, 0%, 75%);
@@ -45,7 +45,7 @@ html {
 [data-theme="dark"] {
   color-scheme: dark;
   --color-bg-dark: hsl(210, 10%, 5%);
-  --color-bg-medium: hsl(0, 0%, 5%);
+  --color-bg-medium: hsl(210, 5%, 7%);
   --color-bg-light: hsl(0, 0%, 10%);
   --color-border: hsl(0, 0%, 15%);
   --color-text-medium: hsl(0, 0%, 75%);
@@ -281,19 +281,19 @@ main {
 }
 
 .projects {
-  display: grid;
-  column-gap: 4rem;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .projects h2 {
-  grid-column: 1 / -1;
-  margin-top: 0;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
 }
 
-.project {
-  margin-bottom: 4rem;
+.projects .project {
+  display: flex;
 }
 
 .project-icon {
@@ -308,6 +308,36 @@ main {
       color-mix(in srgb, var(--color-primary), white 25%) 50%,
       var(--color-primary) 50%,
       color-mix(in srgb, var(--color-primary), black 25%));
+}
+
+.projects .project-card {
+  background-color: var(--color-bg-light);
+  border-radius: 0.5rem;
+  box-shadow: 0.25rem 0 var(--color-primary-active) inset,
+    0 0.125em #ffffff2f inset,
+    0 -0.125em #0000002f inset;
+  padding: 1rem 1rem 1rem 1.25rem;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  min-height: 14rem;
+  min-width: 14rem;
+}
+
+.projects .project-card .project-link {
+  margin-top: auto;
+}
+
+.projects .project .project-info {
+  background-color: var(--color-bg-medium);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-block: 0.5rem;
+}
+
+.projects .project .project-info {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .project-icon path {
@@ -379,7 +409,26 @@ nav.open {
   section,
   .projects {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+  }
+
+  .projects .project {
+    flex-direction: column;
+  }
+
+  .projects .project .project-card {
+    box-shadow: 0 0.25rem var(--color-primary-active) inset,
+      0 -0.125em #0000002f inset;
+  }
+
+  .projects .project .project-info {
+    margin-inline: 0.5rem;
+    margin-block: 0;
+  }
+
+  .projects .project .project-info {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.5rem;
   }
 
   .hero {
